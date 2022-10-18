@@ -4,7 +4,7 @@
   <div class="container">
     <% @restaurants.each do |restaurant| %>
       <div class="border-bottom border-2 mb-3">
-        <h4 class="mb-0"><%= restaurant.name %></h4>
+        <h4 class="mb-0"><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none text-dark" %></h4>
         <p class="text-danger"><em><strong><%= restaurant.category.capitalize %></strong></em></p>
         <p class="ms-1 fs-5"><strong>To reserve:</strong> <%= link_to restaurant.phone_number, "https://www.youtube.com/watch?v=xvFZjo5PgG0" %></p>
         <p class="ms-1 "><%= restaurant.address %></p>
