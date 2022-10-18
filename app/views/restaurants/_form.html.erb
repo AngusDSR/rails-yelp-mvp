@@ -1,0 +1,10 @@
+<div class="container mt-2 p-2 rounded bg-dark text-light align-middle fs-5">
+    <%= simple_form_for(@restaurant) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :category %>
+      <%= f.input :address %>
+      <%= f.input :phone_number %>
+      <%= f.submit "Submit listing", class: "btn btn-light fw-bold" %>
+    <% end %>
+  </div>
+<%= render "back" %>

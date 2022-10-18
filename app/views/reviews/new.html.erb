@@ -1,0 +1,12 @@
+<div class="container">
+  <h1 class="fw-bold">Add your review for <%= @restaurant.name %></h1>
+  <hr class="border border-danger">
+  <div class="container mt-2 p-2 rounded bg-dark text-light align-middle fs-5">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+      <%= f.input :rating %>
+      <%= f.input :content %>
+      <%= f.submit "Submit review", class: "btn btn-light  fw-bold" %>
+    <% end %>
+    <%= render "back" %>
+</div>
+</div>
