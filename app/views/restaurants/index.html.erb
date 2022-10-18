@@ -1,7 +1,8 @@
 <div class="container">
   <h1>Restaurants</h1>
-  <hr class="border border-danger">
-  <div class="container">
+  <hr class="mb-0 border border-danger">
+  <%= link_to "List a new resturant", new_restaurant_path, class: "ms-1 text-decoration-none text-end text-danger fs-5 fw-bold" %>
+  <div class="container mt-3">
     <% @restaurants.each do |restaurant| %>
       <div class="border-bottom border-2 mb-3">
         <h4 class="mb-0"><%= link_to restaurant.name, restaurant_path(restaurant), class: "text-decoration-none text-dark" %></h4>
