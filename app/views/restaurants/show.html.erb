@@ -1,16 +1,22 @@
 <div class="container">
   <h1><%= @restaurant.name %></h1>
   <hr class="border border-danger">
-  <div class="mt-2 p-2 rounded bg-dark text-light align-middle fs-3 fw-bold">
+  <div class="row mt-2 p-2 rounded bg-dark text-light align-middle fs-3 fw-bold">
     <p class="m-0">"<u><i>The best <%= @restaurant.category %> food</u></i>" in <%= @restaurant.address.match(/(?<=, ).*/) %>!</p>
   </div>
   <div class="container text-end fs-6">
     <p class="mb-0"><%= @restaurant.address %></p>
     <p class="mb-0"><%= @restaurant.phone_number %></p>
   </div>
-  <h3>Reviews</h3>
-  <div class="container">
-  [reviews]
+  <h3 class="pb-1 border-bottom border-3 border-warning w-80">Reviews</h3>
+  <div class="container mb-1 p-0"  style="--bs-bg-opacity: .35;">
+    <% @restaurant.reviews.each do |review| %>
+      <div class="bg-warning rounded">
+      <p class="p-1 mb-0"><strong>Rating:</strong> <%= review.rating %></p>
+      <p class="p-1 mb-2"><strong>Review:</strong> <%= review.content %></p>
+      </div>
+    <% end %>
+    <%= link_to "Add your review", new_restaurant_review_path(@restaurant), class: "text-decoration-none fw-bold fs-5 text-dark" %>
   </div>
   <%= render "back" %>
 </div>
