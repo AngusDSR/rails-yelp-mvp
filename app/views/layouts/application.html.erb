@@ -12,19 +12,17 @@
   </head>
 
   <body>
+    <%# NAV BAR %>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand fw-bold fs-3" href="#">RailsYelpMvp!</a>
+        <%= link_to "RailsYelpMvp!", restaurants_path, class: "navbar-brand fw-bold fs-3" %>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
+              <a class="nav-link" href="#">Go premium</a>
             </li>
           </ul>
           <span class="navbar-text">
@@ -34,6 +32,15 @@
       </div>
     </nav>
 
+    <%# MAIN CONTENT %>
     <%= yield %>
+
+    <%# FOOTER %>
+    <div class="card text-start fixed-bottom">
+      <div class="card-body">
+        <a href="#" class="btn btn-sm btn-primary">Partner with us</a>
+          <strong>@Made by a tired Wagoner</strong> ❤️
+      </div>
+   </div>
   </body>
 </html>
